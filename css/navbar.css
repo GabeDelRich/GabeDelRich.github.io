@@ -1,5 +1,5 @@
             .navbar{
-                background-color: rgb(45, 66, 97);
+                background-image: linear-gradient(180deg,rgb(20, 64, 145), rgb(47, 117, 150));
                 overflow: hidden;
                 padding: 0px;
                
@@ -46,7 +46,7 @@
                 background-image: linear-gradient(180deg, rgb(55, 91, 160), rgb(17, 158, 223));
             }
             .backdrop{
-                background-color:rgb(64, 186, 223)
+               background-color:#5F9EA0
             }
 
             

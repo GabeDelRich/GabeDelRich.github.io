@@ -18,7 +18,7 @@
                 color:white;
                 border:"3px";
             }
-            body{
+            .darkbody{
                 color:white;
                 background-color:#383535;
             }
@@ -30,5 +30,8 @@
             }
             .oddrows{
                 background-color:#a819b3;
+            }
+            .ibody{
+                background-color:#5F9EA0
             }
             
