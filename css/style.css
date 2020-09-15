@@ -37,4 +37,9 @@
             .bottomtable{
                 text-align: center;
             }
+            .centertext{
+                text-align:center;
+                text-decoration: underline;
+                font-size:20px;
+            }
             
