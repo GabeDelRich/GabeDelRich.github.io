@@ -19,21 +19,41 @@
                 height: 100%;
                 width: 56%;
                 float: left;
-
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
             #right_pane{
                 background-color: blue;
                 height: 100%;
                 width: 44%;
                 float: left;
-
             }
             #story_text{
                 background-color: yellow;
                 height: 80%;
             }
             #button_choices{
-
+                background-color: pink;
+                height: 20%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            #story_img{
+                max-height: 100%;
+                max-width: 100%;
+                width: auto;
+                height: auto;
+            }
+            .buttons{
+                text-decoration: none;
+                color: white;
+                background-color: black;
+                padding: 10px;
+                border-radius: 8px;
+                font-size: 10px;
+                margin: 10px;
             }
     </style>
     <body class="backdrop">
@@ -60,10 +80,20 @@
         </ul>
 
     <div id="container">
-        <div id="left_pane"></div>
+        <div id="left_pane">
+            <img id="story_img" src="images/Tesla.jpg.JPG" />
+        
+        </div>
         <div id="right_pane">
-            <div id="story_text"></div>
-            <div id="button_choices"></div>           
+            <div id="story_text">
+                <p>This is my dog Tesla and she welcomes you to a short Text Adventure.</p>
+                <p>It is a fantasy-ish adventure</p>
+                <p>Do you want to play?</p>
+            </div>
+            <div id="button_choices">
+                <a class="buttons" href="#">Yes</a>
+                <a class="buttons" href="https://www.google.com/">No</a>
+            </div>           
         </div>
     </div>
     </body>
