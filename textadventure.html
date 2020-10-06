@@ -92,7 +92,7 @@
             </div>
             <div id="button_choices">
                 <a id="b1" class="buttons" href="#" onclick="bclick(1)">Yes</a>
-                <a id="b2" class="buttons" href="https://www.google.com/" onclick="bclick(2)">No</a>
+                <a id="b2" class="buttons" href="#" onclick="bclick(2)">No</a>
                 <a id="b3" class="buttons" href="#" onclick="bclick(3)">Yes</a>
                 <a id="b4" class="buttons" href="#" onclick="bclick(4)">No</a>
             </div>           
@@ -112,7 +112,7 @@
         intro();
 
         function intro(){
-            img.src = "image/Tesla.jpg.JPG";
+            img.src = "images/Tesla.jpg.JPG";
             b1.innerHTML = "Yes";
             b2.innerHTML = "No";
             b3.style.display = "none";
@@ -120,6 +120,32 @@
             p1.innerHTML = "This is my dog Tesla and she welcomes you to a short Text Adventure.";
             
         }
+
+        function yes(){
+            img.src="images/skyrim.jpg";
+            p1.innerHTML = "You have a dream of being carried in a cart through the wilderness after a long fight.";
+            b1.innerHTML = "Continue";
+            b2.innerHTML = "Stop Playing";
+        }
+
+        ///////State Machine
+        function bclick(button){
+            if (state == "intro"){
+                if(button == 1){
+                    yes();
+                    state="yes";
+                }
+                else if(button == 2){
+                    no();
+                    state = "no";
+                }
+            }
+
+        }
+
+
+
+
 
     </script>
 
