@@ -124,11 +124,10 @@
         function yes(){
             img.src="images/skyrim.jpg";
             p1.innerHTML = "You have a dream of being carried in a cart through the wilderness after a long fight.";
-            b1.innerHTML = "Continue";
-            b2.innerHTML = "Stop Playing";
+            b1.innerHTML = "Continue Story";
+            b2.style.display = "none";
         }
 
-        ///////State Machine
         function bclick(button){
             if (state == "intro"){
                 if(button == 1){
@@ -139,6 +138,11 @@
                     no();
                     state = "no";
                 }
+            }
+            else if(state == "yes"){
+                if (button ==1)
+                continueStory();
+                state = "enteringVillage"
             }
 
         }
