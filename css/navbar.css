@@ -1,4 +1,4 @@
-            .navbar{
+             .navbar{
                 background-image: linear-gradient(180deg,rgb(20, 64, 145), rgb(47, 117, 150));
                 overflow: hidden;
                 padding: 0px;
@@ -36,6 +36,7 @@
                 
                 display: none;
                 position: absolute;
+                z-index: 1;
                 
             }
 
