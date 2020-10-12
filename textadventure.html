@@ -124,8 +124,26 @@
         function yes(){
             img.src="images/skyrim.jpg";
             p1.innerHTML = "You have a dream of being carried in a cart through the wilderness after a long fight.";
+            p2.style.display = "none";
+            p3.style.display = "none";
             b1.innerHTML = "Continue Story";
-            b2.style.display = "none";
+            b2.innerHTML = "";
+        }
+        function continueStory(){
+            img.src="images/village.jpg";
+            p1.innerHTML = "A guard wakes you up and tells you that you were found next to a sword passed out. He says that he hopes that you will be ok and to wonder around the town. As you start to enter town you see there is a left and right turn, which way will you go?";
+            p2.style.display = "none";
+            p3.style.display = "none";
+            b1.innerHTML = "Left";
+            b2.innerHTML = "Right";
+
+        }
+        function left(){
+            img.src = "images/tavern.jpg";
+            p1.innerHTML = "You see a Tavern and enter it. As you enter it looks crowded and everyone is singing and dancing. You walk over to the Bartender. They greet you and ask ";
+        }
+        function right(){
+
         }
 
         function bclick(button){
@@ -144,6 +162,15 @@
                 continueStory();
                 state = "enteringVillage"
             }
+            else if(button ==1){
+                        left();
+                        state = "left";
+            }
+            else if(button ==2){
+            right();
+            state = "right"
+            }
+
 
         }
 
