@@ -127,7 +127,7 @@
             p2.style.display = "none";
             p3.style.display = "none";
             b1.innerHTML = "Continue Story";
-            b2.innerHTML = "";
+            b2.style.display = "none";
         }
         function continueStory(){
             img.src="images/village.jpg";
@@ -135,19 +135,41 @@
             p2.style.display = "none";
             p3.style.display = "none";
             b1.innerHTML = "Left";
+            b2.style.display = "block";
             b2.innerHTML = "Right";
 
         }
         function left(){
             img.src = "images/tavern.jpg";
-            p1.innerHTML = "You see a Tavern and enter it. As you enter it looks crowded and everyone is singing and dancing. You walk over to the Bartender. They greet you and ask ";
+            p1.innerHTML = "You see a Tavern and enter it. As you enter it looks crowded and everyone is singing and dancing. You walk over to the Bartender.";
+            p2.style.display = "block";
+            p2.innerHTML = "The Bartender says - Would you love to hear a story? (wait about 5 seconds) Well certainly you do! So about 50 years ago a dragon took over a cave inhabited by orcs and now lives there to this day. Occasionally it comes out and attacks us. We do ok but its just annoying and we need someone to kill it."
+            b1.innerHTML = "Leave and Fight Dragon";
+            b2.innerHTML = "Stay and do nothing"
+            b2.style.display = "block";
+
         }
         function right(){
+            img.src = "images/magic.jpg";
+            p1.innerHTML = "You see a Magic shop and enter it. As you enter it is very empty, the only things you see are the items and the shop owner. You walk over to the Wizard.";
+            ps.style.display = "block";
+            p2.innetHTML = "The Wizard says - Would you love to hear a story? (wait about 5 seconds) Well certainly you do! So about 50 years ago a dragon took over a cave inhabited by orcs and now lives there to this day. Occasionally it comes out and attacks us. We do ok but its just annoying and we need someone to kill it.";
+            b1.innerHTML = "Leave and Fight Dragon";
+            b2.innerHTML = "Stay and do nothing";
+            b2.style.display = "block";
+        }
+        function leaveAndFightDragon(){
+            img.src = "images/cave.jpg";
+            p1.innerHTML = "test"
 
+        }
+        function stayAndDoNothing(){
+            img.src = "images/cave.jpg";
+            p1.innerHTML = "test"
         }
 
         function bclick(button){
-            if (state == "intro"){
+             if (state == "intro"){
                 if(button == 1){
                     yes();
                     state="yes";
@@ -157,21 +179,44 @@
                     state = "no";
                 }
             }
-            else if(state == "yes"){
-                if (button ==1)
-                continueStory();
-                state = "enteringVillage"
+             if(state == "yes"){
+                else if (button ==1){
+                    continueStory();
+                    state = "enteringVillage"
+                }
             }
-            else if(button ==1){
-                        left();
-                        state = "left";
+             if(state == "continueStory"){
+                 if (button ==1){
+                    left();
+                    state = "left";
+                }
+                else if(button ==2){
+                    right();
+                    state = "right"
+                }
             }
-            else if(button ==2){
-            right();
-            state = "right"
+             
+             if(state == "right"){
+                if (button ==1){
+                    leaveAndFightDragon();
+                    state = "leaveAndFightDragon";
+                }
+                else if(button ==2){
+                    stayAndDoNothing();
+                    state = "knockedOut";
+                }
             }
-
-
+             if(state == "left"){
+                 if (button ==1){
+                    leaveAndFightDragon();
+                    state = "leaveAndFightDragon";
+                {
+                else if(button ==2){
+                    stayAndDoNothing();
+                    state = "knockedOut";
+                {
+            }
+            
         }
 
 
