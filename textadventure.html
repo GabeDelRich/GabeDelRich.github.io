@@ -120,6 +120,7 @@
             p1.innerHTML = "This is my dog Tesla and she welcomes you to a short Text Adventure.";
             
         }
+        
 
         function yes(){
             img.src="images/skyrim.jpg";
@@ -179,13 +180,13 @@
                     state = "no";
                 }
             }
-             if(state == "yes"){
-                else if (button ==1){
+             if (state == "yes"){
+                if (button ==1){
                     continueStory();
                     state = "enteringVillage"
                 }
             }
-             if(state == "continueStory"){
+             if (state == "continueStory"){
                  if (button ==1){
                     left();
                     state = "left";
@@ -196,7 +197,7 @@
                 }
             }
              
-             if(state == "right"){
+             if (state == "right"){
                 if (button ==1){
                     leaveAndFightDragon();
                     state = "leaveAndFightDragon";
@@ -206,15 +207,15 @@
                     state = "knockedOut";
                 }
             }
-             if(state == "left"){
+             if (state == "left"){
                  if (button ==1){
                     leaveAndFightDragon();
                     state = "leaveAndFightDragon";
-                {
+                }
                 else if(button ==2){
                     stayAndDoNothing();
                     state = "knockedOut";
-                {
+                }
             }
             
         }
