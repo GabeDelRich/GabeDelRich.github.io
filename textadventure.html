@@ -140,6 +140,7 @@
             b2.innerHTML = "Right";
 
         }
+        
         function left(){
             img.src = "images/tavern.jpg";
             p1.innerHTML = "You see a Tavern and enter it. As you enter it looks crowded and everyone is singing and dancing. You walk over to the Bartender.";
@@ -156,8 +157,8 @@
             ps.style.display = "block";
             p2.innetHTML = "The Wizard says - Would you love to hear a story? (wait about 5 seconds) Well certainly you do! So about 50 years ago a dragon took over a cave inhabited by orcs and now lives there to this day. Occasionally it comes out and attacks us. We do ok but its just annoying and we need someone to kill it.";
             b1.innerHTML = "Leave and Fight Dragon";
-            b2.innerHTML = "Stay and do nothing";
             b2.style.display = "block";
+            b2.innerHTML = "Stay and do nothing"
         }
         function leaveAndFightDragon(){
             img.src = "images/cave.jpg";
@@ -180,13 +181,13 @@
                     state = "no";
                 }
             }
-             if (state == "yes"){
+             else if (state == "yes"){
                 if (button ==1){
                     continueStory();
-                    state = "enteringVillage"
+                    state = "continueStory"
                 }
             }
-             if (state == "continueStory"){
+            else if (state == "continueStory"){
                  if (button ==1){
                     left();
                     state = "left";
@@ -197,7 +198,7 @@
                 }
             }
              
-             if (state == "right"){
+            else if (state == "right"){
                 if (button ==1){
                     leaveAndFightDragon();
                     state = "leaveAndFightDragon";
@@ -207,7 +208,7 @@
                     state = "knockedOut";
                 }
             }
-             if (state == "left"){
+            else if (state == "left"){
                  if (button ==1){
                     leaveAndFightDragon();
                     state = "leaveAndFightDragon";
