@@ -161,15 +161,36 @@
             b2.innerHTML = "Stay and do nothing"
         }
         function leaveAndFightDragon(){
-            img.src = "images/cave.jpg";
-            p1.innerHTML = "test"
-
+            img.src = "images/sword.jpg";
+            p1.innerHTML = "You leave the tavern and start to walk through the town. You walk upon a statue holding a sword. You grab and the town cheers glad to see someone trying to kill the dragon. You start your journery to the cave where it lives to slay it."
+            p2.style.display = "none";
+            b1.innerHTML = "Continue";
+            b2.style.display = "none";
         }
-        function stayAndDoNothing(){
+        function knockedOut(){
             img.src = "images/cave.jpg";
-            p1.innerHTML = "test"
+            p1.innerHTML = "You pass out and wake up holding a sword infornt of a cave. Oh well I'll just fight it you think."
+            p2.style.display = "none";
+            b1.innerHTML = "Continue";
+            b2.style.display = "none";
         }
-
+        function dragon(){
+            img.src = "images/komodo.jpg";
+            p1.innerHTML = "You enter a cave that you suspect the dragon to live and and see this image. Do you slay it?"
+            b1.innerHTML = "Slay it";
+            b2.style.display = "block";
+            b2.innerHTML = "Leave it alone"
+        }
+        function youDontSlayTheBeast(){
+            img.src = "images/chomp.jpg";
+            p1.innerHTML = "As you make a swing at the monster it moves with such incredible speed and Chomps you. You are dead now."
+            b1.innerHTML = "There is no point to this button"
+        }
+        function youAreDead(){
+            img.src = "images/chomp.jpg";
+            p1.innerHTML = "As you decide to leave it alone and walk out of the cave is sprints on two legs past you turning around about 10 feet infornt of you and charges you. You are dead now.";
+            b1.innerHTML = "There is no point to this button"
+        }
         function bclick(button){
              if (state == "intro"){
                 if(button == 1){
@@ -201,10 +222,10 @@
             else if (state == "right"){
                 if (button ==1){
                     leaveAndFightDragon();
-                    state = "leaveAndFightDragon";
+                    state = "lafd";
                 }
                 else if(button ==2){
-                    stayAndDoNothing();
+                    sadn();
                     state = "knockedOut";
                 }
             }
@@ -214,8 +235,40 @@
                     state = "leaveAndFightDragon";
                 }
                 else if(button ==2){
-                    stayAndDoNothing();
+                    knockedOut();
                     state = "knockedOut";
+                }
+            }
+             else if (state == "left"){
+                 if (button ==1){
+                    lafd();
+                    state = "leaveAndFightDragon";
+                }
+                else if(button ==2){
+                    sadn();
+                    state = "knockedOut";
+                }
+            }
+            else if (state == "leaveAndFightDragon"){
+                if(button ==1){
+                    dragon();
+                    state = "Dragon"
+                }
+            }
+            else if (state == "knockedOut"){
+                if(button ==1){
+                    dragon();
+                    state = "Dragon"
+                }
+            }
+            else if (state == "dragon"){
+                if(button ==1){
+                    youDontSlayTheBeast();
+                    state = "youDontSlayTheBeast";
+                }
+                else if(button ==2){
+                    youAreDead();
+                    state = "youAreDead";
                 }
             }
             
